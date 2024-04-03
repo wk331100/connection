@@ -1,0 +1,10 @@
+{"@timestamp":"2024-04-03T18:20:16.575+08:00","caller":"devserver/server.go:69","content":"Starting dev http server at :6060","level":"info"}
+{"@timestamp":"2024-04-03T18:20:59.840+08:00","caller":"devserver/server.go:69","content":"Starting dev http server at :6060","level":"info"}
+{"@timestamp":"2024-04-03T18:21:59.569+08:00","caller":"devserver/server.go:69","content":"Starting dev http server at :6060","level":"info"}
+{"@timestamp":"2024-04-03T18:22:34.450+08:00","caller":"devserver/server.go:69","content":"Starting dev http server at :6060","level":"info"}
+{"@timestamp":"2024-04-03T18:22:59.026+08:00","caller":"devserver/server.go:69","content":"Starting dev http server at :6060","level":"info"}
+{"@timestamp":"2024-04-03T18:22:59.037+08:00","caller":"gorm/mysql.go:78","content":"success to connect MySQL","level":"info"}
+{"@timestamp":"2024-04-03T18:23:58.921+08:00","caller":"proc/shutdown.go:58","content":"Got signal 2, shutting down...","level":"info"}
+{"@timestamp":"2024-04-03T18:24:04.387+08:00","caller":"devserver/server.go:69","content":"Starting dev http server at :6060","level":"info"}
+{"@timestamp":"2024-04-03T18:24:04.389+08:00","caller":"gorm/mysql.go:78","content":"success to connect MySQL","level":"info"}
+{"@timestamp":"2024-04-03T18:24:12.913+08:00","caller":"proc/shutdown.go:58","content":"Got signal 2, shutting down...","level":"info"}

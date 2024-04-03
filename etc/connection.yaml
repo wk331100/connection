@@ -1,0 +1,42 @@
+Name: connection
+Host: 0.0.0.0
+Port: 8080
+
+# 当前服务请求超时时间是 30s
+Timeout: 30000
+
+# 最大连接数 10000，根据实际部署环境设置
+MaxConns: 10000
+
+# 请求体最大允许字节数 10MB，根据实际情况设置
+MaxBytes: 10485760
+
+Log:
+  # 服务名称
+  ServiceName: connection
+  # 日志输出到文件
+  Mode: file
+  # 日志输出文件路径
+  Path: logs
+  # 日志级别
+  Level: info
+  # 是否压缩日志
+  Compress: true
+  # 日志保留天数，只有在文件模式才会生效
+  KeepDays: 180
+  # 按天切割日志
+  Rotation: daily
+
+# 监控，默认都是开启，主要调整端口和监控访问路由
+DevServer:
+  Port: 6060
+  HealthPath: "/health"
+  MetricsPath: "/metrics"
+
+# mysql 连接字符串
+MysqlDNS: root:@tcp(127.0.0.1:3306)/connection?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
+
+RedisConf:
+  Host: "127.0.0.1"
+  Port: 6379
+  Pass: "123456"

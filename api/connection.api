@@ -1,0 +1,60 @@
+syntax = "v1"
+
+info(
+	author: "kunkka wu"
+	date: "2024-3-28"
+	desc: "connection the world"
+)
+
+type (
+	// 基础返回体都包含 code 和 msg 两个字段
+	BaseResponse {
+		Code int    `json:"code"` // 200 表示服务端执行成功，非 200 表示执行失败
+		Msg  string `json:"msg"`  // 如果执行失败，返回具体错误信息
+	}
+
+	// 分页参数
+	Pagination {
+		PageNum  int64 `json:"pageNum"`  // 页码
+		PageSize int64 `json:"pageSize"` // 每页条数
+		Total    int64 `json:"total"`    // 总数
+	}
+)
+
+type (
+	// Hash上链extend
+	HashUploadExtend {
+		FileID       string `json:"fileID"`              // 存证文件的唯一id
+		Provider     string `json:"provider"`            // 文件提供者
+		Owner        string `json:"owner"`               // 文件所有者
+		FileHash     string `json:"fileHash"`            // 文件hash
+		CreatedTime  string `json:"createdTime"`         // 创建时间
+		FileName     string `json:"fileName,optional"`   // 文件名称
+		BusinessID   string `json:"businessID,optional"` // 文件编号
+		BusinessType string `json:"businessType"`        // 文件类型
+	}
+
+	// Hash 上链返回
+	HashUploadResp {
+		BaseResponse
+		Data HashUploadRespData `json:"data,optional"`
+	}
+
+	HashUploadRespData {
+		TxID   string `json:"txID"`   // 交易id
+		FileID string `json:"fileID"` // 存证文件的唯一id
+	}
+)
+
+@server(
+	prefix: /api/v1
+	middleware: AuthInterceptor, RequestHeaderInterceptor
+	group: hash
+)
+
+service connection {
+	@doc "hash上链"
+	@handler hashUpload
+	post /hashUpload () returns (HashUploadResp)
+
+}

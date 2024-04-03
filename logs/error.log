@@ -1,0 +1,4 @@
+{"@timestamp":"2024-04-03T18:20:16.637+08:00","caller":"gorm/mysql.go:58","content":"failed to open MySQL connection: Error 1049 (42000): Unknown database 'connection'","level":"error"}
+{"@timestamp":"2024-04-03T18:20:59.843+08:00","caller":"gorm/mysql.go:58","content":"failed to open MySQL connection: Error 1049 (42000): Unknown database 'connection'","level":"error"}
+{"@timestamp":"2024-04-03T18:21:59.572+08:00","caller":"gorm/mysql.go:58","content":"failed to open MySQL connection: Error 1049 (42000): Unknown database 'connection'","level":"error"}
+{"@timestamp":"2024-04-03T18:22:34.461+08:00","caller":"gorm/mysql.go:60","content":"failed to open MySQL connection: Error 1049 (42000): Unknown database 'connection'","level":"error"}
